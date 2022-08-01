@@ -117,7 +117,7 @@ public class UATest {
 	}
 	
 	@Test
-	//Test deleted user that does not exist
+	//Test delete user that does not exist
 	public void testdeletedUser2() {
 		ArrayList<UserAcct> list = new ArrayList();
 		String userID = "21064003";
