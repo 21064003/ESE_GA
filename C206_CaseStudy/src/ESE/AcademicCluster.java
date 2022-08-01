@@ -20,11 +20,11 @@ public class AcademicCluster {
 				option = Helper.readInt("Enter choice > ");
 
 				if (option == 1) {
-					viewAC(null);
+					viewAllAcademicCluster(null);
 				} else if (option == 2) {
-					addAC(null, clusterid, clusterid);
+					addAcademicCluster(null, clusterid, clusterid);
 				} else if (option == 3) {
-					deleteAC(null, clusterid);
+					deleteAcademicCluster(null, clusterid);
 				} else if (option == 4) {
 
 					System.out.println("Thank you for using Academic Clusters!");
@@ -40,13 +40,12 @@ public class AcademicCluster {
 			System.out.println();
 		}
 		
-		public static void viewAllAcademicCluster(ArrayList<AcademicCluster> AcademicClusterList) {
+		public static String viewAllAcademicCluster(ArrayList<AcademicCluster> AcademicClusterList) {
 			  String output = String.format("%-12s %-25s", "CLUSTER ID", "CLUSTER NAME");
 		        for(int a = 0; a < AcademicClusterList.size(); a ++) {
 		            output += String.format("\n%-12s %-25s", AcademicClusterList.get(a).clusterid, AcademicClusterList.get(a).clustername);
 		            }
-
-		        System.out.println(output);
+				return output;
 		    }
 		
 		public static AcademicCluster inputAcademicCluster() {
