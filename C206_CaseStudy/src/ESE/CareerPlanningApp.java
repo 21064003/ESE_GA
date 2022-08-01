@@ -23,10 +23,16 @@ public class CareerPlanningApp {
 				String pass = Helper.readString("Password: ");
 				String confirm = Helper.readString("Re-enter password: ");
 				
+				while (pass.equals(confirm) == false) {
+					System.out.println("Error password does not match.");
+					System.out.println("Please try again");
+					pass = Helper.readString("Password: ");
+					confirm = Helper.readString("Re-enter password: ");
+				}
 				if (pass.equals(confirm)) {
 					UserAcct.addUser(userList, id, name, "staff", email, pass);
 					System.out.println("Registration successful. Please login with the new account");
-				}
+				} 
 				
 			} else if (log == 2) {
 				System.out.println("LOGIN");
@@ -50,6 +56,9 @@ public class CareerPlanningApp {
 							} else if (options == 2) {
 								String delete = Helper.readString("Enter id of user to delete: ");
 								UserAcct.deleteUser(userList, delete);
+								Helper.line(30, "=");
+								menu();
+								options = Helper.readInt("Enter option: ");
 							} else if (options == 3) {
 							
 							} else if (options == 4) {
