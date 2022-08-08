@@ -37,12 +37,12 @@ public class AcademicCluster {
 			}
 		}
 		
-		public static AcademicCluster inputAcademicCluster() {
+		public static String inputAcademicCluster() {
 			String id = Helper.readString("Enter id of Academic Cluster > ");
 			String name = Helper.readString("Enter name of Academic Cluster > ");
 			
 			AcademicCluster ac = new AcademicCluster(id, name);
-			return ac;
+			return name;
 		}
 		
 		public static void addAcademicCluster(ArrayList<AcademicCluster> AcademicClusterlist, AcademicCluster ac) {
@@ -70,7 +70,8 @@ public class AcademicCluster {
 			
 			String deleteAcademicCluster = Helper.readString("Enter Academic Cluster to search > ");
 			for (int a = 0; a < AcademicClusterlist.size(); a ++) {
-	            if (deleteAcademicCluster.equalsIgnoreCase(AcademicClusterlist.get(a).clustername())) {
+	            AcademicClusterlist.get(a);
+				if (deleteAcademicCluster.equalsIgnoreCase(AcademicCluster.inputAcademicCluster())) {
 	            	AcademicClusterlist.remove(a);
 	            	System.out.println("AcademicCluster deleted successfully");
 	            	break;
