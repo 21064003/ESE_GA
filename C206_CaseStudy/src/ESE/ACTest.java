@@ -28,32 +28,41 @@ public class ACTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-		
-	@Test
-	public void test1() {
-		ArrayList<AcademicCluster>list = new ArrayList();
-		String clusterid = "1008";
-		String clustername = "ICT";
-		String clusterid1 = "2001";
-		String clustername1 = "Business";
-		
-		
-		AcademicCluster.addAcademicCluster(list, clusterid, clustername);
-		AcademicCluster.addAcademicCluster(list, clusterid1, clustername1);
-		
-		assertEquals(list.size(), 2);
-		
-		
-	}
 	
 	@Test
-	public void test2() {
-		ArrayList<AcademicCluster>list = new ArrayList();
-		String clusterid = "1008";
-		
-		AcademicCluster.deleteAcademicCluster(list, clusterid);
-		
-		assertTrue(list.size()==0);
-		
+	public void addAcademicClusterTest() {
+		// AcademicCluster list is not null, so that it is able to add a new AcademicCluster (boundary)
+		assertNotNull("Test if there is valid category arraylist to add to", AcademicClusterList);
+		// Given an empty list, after adding 1 AcademicCluster, the size of the list is 1 (normal)
+		// The AcademicCluster just added is the same as the first AcademicCluster of the list
+		AcademicCluster.addAcademicCluster(AcademicClusterList, a1);
+		assertEquals("Test that AcademicCluster arraylist size is 1", 1, AcademicClusterList.size());
+		assertSame("Test that AcademicCluster is added", a1, AcademicClusterList.get(0));
+		// Add another AcademicCluster
+		// Test the size of the list is 2 (normal)
+		// The AcademicCluster just added is the same as the second AcademicCluster of the list
+		AcademicCluster.addAcademicCluster(AcademicClusterList, a2);
+		assertEquals("Test that AcademicCluster arraylist size is 2", 1, AcademicClusterList.size());
+		assertSame("Test that AcademicCluster is added", a2, AcademicClusterList.get(1));
 	}
-}
+		
+	@Test
+	public void viewAllAcademicClusterTest() {
+		// Test if Academic list is not null but empty (boundary)
+		assertNotNull("Test if there is valid Academic arraylist to add to ", AcademicClusterList);
+		//Test if the list of Academic retrieved from the case study is empty (boundary)
+		String allAcademicCluster = AcademicCluster.retrieveAllAcademicCluster(AcademicClusterList);
+		String testOutput = "";
+		assertEquals("Check that viewAllAcademicCluster", testOutput, allAcademicCluster);
+		// Given an empty list, after adding 2 Academic Clusters, test if the size of the list is 2 (normal)
+		AcademicCluster.addAcademicCluster(AcademicClusterList, a1);
+		AcademicCluster.addAcademicCluster(AcademicClusterList, a2);
+		assertEquals("Test that AcademicCluster arraylist size is 2", 2, AcademicClusterList.size());
+		// Test if expected output string same name and id as the list of AcademicCluster retrieved from the AcademicCluster
+		allAcademicCluster = AcademicCluster.retrieveAllAcademicCluster(AcademicClusterList);
+		testOutput = String.format("\n%-12s %-25s", "AcademicCluster 1", "09/08/2021");
+		testOutput += String.format("\n%-12s %-25s", "AcademicCluster 2", "09/11/2021");
+		assertEquals("Test that ViewAllAcademicClusterList", testOutput, allAcademicCluster);
+		
+		}
+	}
