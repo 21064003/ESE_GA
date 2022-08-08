@@ -18,26 +18,33 @@ public class UserAcct {
 	}
 	
 	public static void printMenu(ArrayList<UserAcct> list) {
-		System.out.println("User Account Menu");
-		System.out.println("1. View user list");
-		System.out.println("2. Add user");
-		System.out.println("3. Delete user");
-		int choice = Helper.readInt("Enter option: ");
-		
-		if (choice == 1) {
-			UserAcct.viewUserList(list);
-		} else if (choice == 2) {
-			String userID = Helper.readString("Enter User ID: ");
-			String name = Helper.readString("Enter Username: ");
-			String role = Helper.readString("Enter User role: ");
-			String email = Helper.readString("Enter email: ");
-			String password = Helper.readString("Enter password: ");
-			UserAcct.addUser(list, userID, name, role, email, password);
-		} else if (choice == 3){
-			String search = Helper.readString("Enter user id of user to delete: ");
-			UserAcct.deleteUser(list, search);
-		} else {
-			System.out.println("Error! Invalid option entered");
+		int choice = -1;
+		while (choice != 4) {
+			System.out.println("User Account Menu");
+			System.out.println("1. View user list");
+			System.out.println("2. Add user");
+			System.out.println("3. Delete user");
+			System.out.println("4. Log out");
+			choice = Helper.readInt("Enter option: ");
+			
+			if (choice == 1) {
+				UserAcct.viewUserList(list);
+			} else if (choice == 2) {
+				String userID = Helper.readString("Enter User ID: ");
+				String name = Helper.readString("Enter Username: ");
+				String role = Helper.readString("Enter User role: ");
+				String email = Helper.readString("Enter email: ");
+				String password = Helper.readString("Enter password: ");
+				UserAcct.addUser(list, userID, name, role, email, password);
+			} else if (choice == 3){
+				String search = Helper.readString("Enter user id of user to delete: ");
+				UserAcct.deleteUser(list, search);
+			} else if (choice == 4) {
+				System.out.println("Logged out.");
+				System.out.println("... ...");
+			}else {
+				System.out.println("Error! Invalid option entered");
+			}
 		}
 	}
 	

@@ -45,26 +45,9 @@ public class CareerPlanningApp {
 						Helper.line(30, "-");
 						System.out.println(userList.get(i).name);
 						Helper.line(30, "-");
-						menu();
-						options = Helper.readInt("Enter option: ");
-						while (options != 4) {
-							if (options == 1) {
-								UserAcct.viewUserList(userList);
-								Helper.line(30, "=");
-								menu();
-								options = Helper.readInt("Enter option: ");
-							} else if (options == 2) {
-								String delete = Helper.readString("Enter id of user to delete: ");
-								UserAcct.deleteUser(userList, delete);
-								Helper.line(30, "=");
-								menu();
-								options = Helper.readInt("Enter option: ");
-							} else if (options == 3) {
-							
-							} else if (options == 4) {
-								System.out.println("Logged out.");
-							}
-						}
+						UserAcct.printMenu(userList);
+						System.out.println("HOMEPAGE");
+						log = Helper.readInt("1. Register for new account \n2. Login with exisiting account \n(key in option)");
 					} 
 				}
 				if (login == false) {
@@ -77,10 +60,4 @@ public class CareerPlanningApp {
 		}
 	}
 
-	public static void menu() {
-		System.out.println("1. View user list");
-		System.out.println("2. Delete user");
-		System.out.println("3. ");
-		System.out.println("4. Log out");
-	}
 }
