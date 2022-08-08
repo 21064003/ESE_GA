@@ -9,9 +9,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AC {
+public class ACTest {
 
-	private static final Object AcademicClusterList = null;
+	private static final ArrayList<AcademicCluster> AcademicClusterList = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -28,27 +28,9 @@ public class AC {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void retrieveAllAcademicClusterTest() {
-		assertNotNull("Test if there is valid Academic Cluster arraylist to add to ", AcademicClusterList);
-	
-	String allAcademicCluster = AcademicCluster.viewAllAcademicCluster(AcademicClusterList);
-	String clusterid = "";
-	assertEquals("Check that ViewAllAcademicClusterList", clusterid, allAcademicCluster);
-	
-	AcademicCluster.addAcademicCluster(AcademicClusterList, 1);
-	AcademicCluster.addAcademicCluster(AcademicClusterList, 2);
-	assertEquals("Test that AcademicCluster arraylist size is 2", 2, AcademicClusterList.size());
-	
-	allAcademicCluster = AcademicCluster.viewAllAcademicCluster(AcademicClusterList);
-	clusterid = String.format("%-20s %-20s\n", "21010", "IT");
-	clusterid += String.format("%-20s %-20s\n", "01010", "Art");
-	assertEquals("Test that ViewAllAcademicClusterList", clusterid, allAcademicCluster);
-	}
 		
 	@Test
-	public void test2() {
+	public void test1() {
 		ArrayList<AcademicCluster>list = new ArrayList();
 		String clusterid = "1008";
 		String clustername = "ICT";
@@ -65,7 +47,7 @@ public class AC {
 	}
 	
 	@Test
-	public void test3() {
+	public void test2() {
 		ArrayList<AcademicCluster>list = new ArrayList();
 		String clusterid = "1008";
 		
@@ -75,4 +57,3 @@ public class AC {
 		
 	}
 }
-
