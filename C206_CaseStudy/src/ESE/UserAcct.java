@@ -24,7 +24,7 @@ public class UserAcct {
 			System.out.println("1. View user list");
 			System.out.println("2. Add user");
 			System.out.println("3. Delete user");
-			System.out.println("4. Log out");
+			System.out.println("4. Exit");
 			choice = Helper.readInt("Enter option: ");
 			
 			if (choice == 1) {
@@ -40,9 +40,8 @@ public class UserAcct {
 				String search = Helper.readString("Enter user id of user to delete: ");
 				UserAcct.deleteUser(list, search);
 			} else if (choice == 4) {
-				System.out.println("Logged out.");
-				System.out.println("... ...");
-			}else {
+				CareerPlanningApp.menu();
+			} else {
 				System.out.println("Error! Invalid option entered");
 			}
 		}

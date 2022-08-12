@@ -11,12 +11,12 @@ public class AcademicCluster {
 			this.clustername = clustername;
 			}
 		
-		public void SubMenu(ArrayList<AcademicCluster> AcademicClusterlist, AcademicCluster ac) {
+		public static void SubMenu(ArrayList<AcademicCluster> AcademicClusterlist, AcademicCluster ac) {
 			System.out.println("Academic Clust Menu");
 			System.out.println("1. View academic cluster");
 			System.out.println("2. Add an academic cluster");
 			System.out.println("3. Delete an academic cluster");
-			System.out.println();
+			System.out.println("4. Exit");
 			
 			int option = -1;
 
@@ -31,8 +31,9 @@ public class AcademicCluster {
 				} else if (option == 3) {
 					deleteAcademicCluster(AcademicClusterlist);
 				} else if (option == 4) {
-
-					System.out.println("Thank you for using Academic Clusters!");
+					CareerPlanningApp.menu();
+				} else {
+					System.out.println("Error! Invalid option entered");
 				}
 			}
 		}
