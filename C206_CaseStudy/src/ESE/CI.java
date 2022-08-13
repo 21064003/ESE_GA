@@ -106,7 +106,7 @@ public class CI {
 		String careerName = "Business & Finance";
 		
 		CareerInfo.addCareer(list, careerID, careerName);
-		String search = "1";
+		String search = "2";
 		
 		CareerInfo.deleteCareer(list, search);
 		
@@ -125,7 +125,7 @@ public class CI {
 	}
 	
 	@Test
-	//Test delete 1 career from array with multiple users
+	//Test delete 1 id from array with multiple careers
 	public void testdeletedCareerInfo4() {
 		ArrayList<CareerInfo> list = new ArrayList();
 		String careerID = "1";
