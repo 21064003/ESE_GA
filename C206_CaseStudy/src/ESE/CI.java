@@ -144,7 +144,7 @@ public class CI {
 	}
 	
 	@Test
-	//Test deleting same career twice
+	//Test deleting same careers twice
 	public void testdeletedCareerInfo5() {
 		ArrayList<CareerInfo> list = new ArrayList();
 		String careerID = "1";
