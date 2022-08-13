@@ -62,7 +62,7 @@ public class CareerPlanningApp {
 							} else if (menu == 3) {
 								CareerInfo.printMenu(ciList);
 							} else if (menu == 4) {
-								
+								SubjectsMenu.main(args);
 							} else if (menu == 5) {
 								
 							} else {
